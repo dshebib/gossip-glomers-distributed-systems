@@ -17,6 +17,11 @@ a standardized set of messages.
   - Less than 20 messages per sent operation
   - Randomized network partitions to mimic faulty network
   - Best performance acheieved using tree node topology
+4. Counter - Distributed grow-only counter using underlying KV-store primitive
+5. Kafka - Kafka-style append-only log
+  - A best-effort, eventually consistent log system that sacrifices durability for simplicity
+  - Similar to Kafka with acks=0 (fire-and-forget) but with a centralized offset generation mechanism.
+  - Uses centralized linearizable KV-store to acquire unique per-key offsets.
 
 ## Running
 Follow the instructions at (https://fly.io/dist-sys/1/) to setup maelstrom and run the tests.
